@@ -1,6 +1,6 @@
 # Audio review
 
-Every clip on the site (65), unit by unit. Each link plays one clip.
+Every clip on the site (92), unit by unit. Each link plays one clip.
 
 Generated from each unit's `vocab.js` by `tools/review.mjs`: don't edit this file by hand.
 
@@ -73,3 +73,35 @@ Generated from each unit's `vocab.js` by `tools/review.mjs`: don't edit this fil
 | 63 | computadora | computer | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/computadora.mp3) |
 | 64 | ¡Excelente! | Excellent! | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/excelente.mp3) |
 | 65 | ¡Muy bien! | Very good! | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/muy-bien.mp3) |
+
+## Unit 2
+
+| # | Spanish | English | Audio |
+|---|---|---|---|
+| 1 | Buenos días | Good morning | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/buenos-dias.mp3) |
+| 2 | Buenas tardes | Good afternoon | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/buenas-tardes.mp3) |
+| 3 | Buenas noches | Good evening; good night | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/buenas-noches.mp3) |
+| 4 | Adiós | Goodbye | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/adios.mp3) |
+| 5 | Hasta luego | See you later | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/hasta-luego.mp3) |
+| 6 | Hasta mañana | See you tomorrow | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/hasta-manyana.mp3) |
+| 7 | Nos vemos | See you | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/nos-vemos.mp3) |
+| 8 | ¿Cómo estás? | How are you? (tú) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/como-estas.mp3) |
+| 9 | ¿Cómo está usted? | How are you? (usted) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/como-esta-usted.mp3) |
+| 10 | ¿Qué tal? | How's it going? | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/que-tal.mp3) |
+| 11 | ¿Qué onda? | What's up? | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/que-onda.mp3) |
+| 12 | Bien, gracias. | Fine, thanks. | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/bien-gracias.mp3) |
+| 13 | Muy bien, gracias. | Very well, thanks. | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/muy-bien-gracias.mp3) |
+| 14 | Más o menos. | So-so. | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/mas-o-menos.mp3) |
+| 15 | ¿Y tú? | And you? (tú) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/y-tu.mp3) |
+| 16 | ¿Y usted? | And you? (usted) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/y-usted.mp3) |
+| 17 | Por favor | Please | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/por-favor.mp3) |
+| 18 | Gracias | Thank you | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/gracias.mp3) |
+| 19 | Muchas gracias | Thank you very much | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/muchas-gracias.mp3) |
+| 20 | De nada | You're welcome | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/de-nada.mp3) |
+| 21 | Perdón | Excuse me; sorry | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/perdon.mp3) |
+| 22 | Con permiso | Excuse me (may I pass?) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/con-permiso.mp3) |
+| 23 | Lo siento | I'm sorry | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/lo-siento.mp3) |
+| 24 | No pasa nada | No problem; don't worry | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/no-pasa-nada.mp3) |
+| 25 | Adelante | Go ahead | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/adelante.mp3) |
+| 26 | Mucho gusto | Nice to meet you | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/mucho-gusto.mp3) |
+| 27 | Igualmente | Likewise | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/igualmente.mp3) |

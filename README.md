@@ -2,12 +2,14 @@
 
 Spanish lessons and games with native-sounding audio, served at https://ssullivan.github.io/learn-spanish/. The Spanish is Mexico's.
 
-The course is planned as 20 units, each building on the ones before (the roadmap is in CLAUDE.md). Every unit has a learn page with a listening quiz and at least one game, plus *Stress Detective* (hear a word and tap the stressed syllable).
+The course is planned as 20 units, each building on the ones before (the roadmap is in CLAUDE.md). Every unit has a learn page with a listening quiz and at least one game, plus *Stress Detective* (hear a word or phrase and tap the stressed syllable).
 
 ### Foundations
 - **Unit 1 · Sonidos · Sounds & Spelling**: the five vowels, the letters that surprise English speakers (h, j, ll, ñ, rr...), and the rule for which syllable to stress.
   - *Sound Match*: pero or perro? Una or uña? Papa or papá? Hear a word and pick how it's spelled.
   - *Stress Detective*: hear a word and tap its loudest syllable, ending with a level by ear alone.
+- **Unit 2 · Saludos · Greetings**: hello and goodbye by the time of day, ¿cómo estás? or ¿cómo está usted?, please and thank you, and perdón, con permiso or lo siento.
+  - *Reply Match*: hear a phrase and answer back, or pick what to say in a situation (tú or usted?).
 
 **Reviewing the audio:** native speakers can listen to every recording in [AUDIO-REVIEW.md](AUDIO-REVIEW.md).
 

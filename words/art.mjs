@@ -4,9 +4,9 @@
  * `node tools/draw.mjs` writes them to words/img/<id>.svg; never edit those.
  * Shared parts are in tools/svg.mjs.
  */
-import { svg, OUTLINE, COLOUR, shadow, glass } from '../tools/svg.mjs';
+import { svg, OUTLINE, COLOUR, shadow, glass, clockFace, sky } from '../tools/svg.mjs';
 
-const { ink, white, cream, red, orange, yellow, green, teal, blue, pink, brown, tan } = COLOUR;
+const { ink, white, cream, red, orange, yellow, green, teal, blue, purple, pink, brown, tan } = COLOUR;
 
 // Unit 1 · Sounds & Spelling
 
@@ -117,8 +117,44 @@ const barco = () => svg('a boat', `
   <path d="M58 30 L30 78 L58 78 Z" fill="${yellow}" ${OUTLINE}/>
   <path d="M16 84 L112 84 L98 104 L30 104 Z" fill="${red}" ${OUTLINE}/>`);
 
+// Unit 2 · Greetings · Saludos: each picture shows when the phrase is said.
+
+// A time of day: the sky, what is in it, and a small clock in the corner.
+const timeOfDay = (title, skyColour, groundColour, inTheSky, hour) =>
+  svg(title, `${sky(skyColour, groundColour, inTheSky)}${clockFace(hour, 0, { cx: 98, cy: 30, r: 15 })}`);
+
+const sunRays = (cx, cy, inner, outer) => Array.from({ length: 10 }, (_, index) => {
+  const angle = (index / 10) * 2 * Math.PI;
+  const point = radius => `${Math.round(cx + radius * Math.cos(angle))} ${Math.round(cy + radius * Math.sin(angle))}`;
+  return `<path d="M${point(inner)} L${point(outer)}" stroke="${orange}" stroke-width="5" stroke-linecap="round"/>`;
+}).join('');
+
+const buenosDias = () => timeOfDay('the sun rising: morning', '#cfe9ff', green,
+  `${sunRays(40, 96, 26, 38)}<circle cx="40" cy="96" r="22" fill="${yellow}" ${OUTLINE}/>`, 8);
+
+const buenasTardes = () => timeOfDay('the sun high in the sky: afternoon', '#7cc4f5', green,
+  `${sunRays(48, 52, 24, 34)}<circle cx="48" cy="52" r="18" fill="${yellow}" ${OUTLINE}/>`, 3);
+
+const buenasNoches = () => timeOfDay('the moon and stars: night', '#1a2a5a', '#2e4a2e',
+  `<path d="M52 30 A26 26 0 1 0 72 72 A20 20 0 1 1 52 30 Z" fill="${cream}" ${OUTLINE}/>
+   <path d="M24 26 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2 Z M80 64 l1.5 4 4 1.5 -4 1.5 -1.5 4 -1.5 -4 -4 -1.5 4 -1.5 Z M104 82 l1.5 4 4 1.5 -4 1.5 -1.5 4 -1.5 -4 -4 -1.5 4 -1.5 Z" fill="${yellow}"/>`, 9);
+
+const adios = () => svg('a hand waving goodbye', `
+  <path d="M20 36 C14 32 14 24 20 22 M14 50 C6 46 6 36 12 32 M108 36 C114 32 114 24 108 22 M114 50 C122 46 122 36 116 32" fill="none" stroke="${teal}" stroke-width="4" stroke-linecap="round"/>
+  <g transform="rotate(-12 64 70)">
+    <path d="M42 120 L42 66 C42 60 50 60 50 66 L50 30 C50 22 60 22 60 30 L60 60 L60 22 C60 14 70 14 70 22 L70 60 L70 28 C70 20 80 20 80 28 L80 64 L80 40 C80 32 90 32 90 40 L90 84 C90 104 80 114 74 120 Z" fill="${tan}" ${OUTLINE}/>
+    <path d="M42 80 C34 70 26 60 22 64 C18 68 30 86 42 100" fill="${tan}" ${OUTLINE}/>
+  </g>`);
+
+const gracias = () => svg('a present', `${shadow(64, 116, 44)}
+  <rect x="22" y="56" width="84" height="56" fill="${purple}" ${OUTLINE}/>
+  <rect x="16" y="40" width="96" height="20" fill="${purple}" ${OUTLINE}/>
+  <rect x="58" y="40" width="12" height="72" fill="${yellow}" ${OUTLINE}/>
+  <path d="M64 40 C50 18 30 24 40 36 C44 40 56 40 64 40 C72 40 84 40 88 36 C98 24 78 18 64 40 Z" fill="${yellow}" ${OUTLINE}/>`);
+
 export default {
   casa: casa(), mesa: mesa(), libro: libro(), sol: sol(), luna: luna(),
   huevo: huevo(), jugo: jugo(), gato: gato(), guitarra: guitarra(), queso: queso(),
   llave: llave(), pinya: pinya(), perro: perro(), zapato: zapato(), vaso: vaso(), barco: barco(),
+  'buenos-dias': buenosDias(), 'buenas-tardes': buenasTardes(), 'buenas-noches': buenasNoches(), adios: adios(), gracias: gracias(),
 };

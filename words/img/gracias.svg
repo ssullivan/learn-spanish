@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><title>a present</title><ellipse cx="64" cy="116" rx="44" ry="7" fill="#3a2a30" opacity=".15"/>
+  <rect x="22" y="56" width="84" height="56" fill="#8e24aa" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="16" y="40" width="96" height="20" fill="#8e24aa" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="58" y="40" width="12" height="72" fill="#fdd835" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M64 40 C50 18 30 24 40 36 C44 40 56 40 64 40 C72 40 84 40 88 36 C98 24 78 18 64 40 Z" fill="#fdd835" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>

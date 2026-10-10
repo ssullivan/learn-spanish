@@ -24,7 +24,8 @@ shared/                every page's code; each file's header comment documents i
   units.js             Words.add/get/list (the dictionary); Units.add, Units.word (borrowing), Units.teaches, Units.byId
   learn.*              learn-page engine (Learn.init)
   game.*               game engine (Game.init: levels, rounds, timer, stars, unlocks; Game.choose, pic, answerText...)
-  stress.js            Stress Detective (Stress.init), and Stress.marked for showing a word's stress
+  stress.js            Stress Detective (Stress.init, Stress.questionsIn: a word, or one word of a phrase), and Stress.marked
+  reply.js             Reply Match (Reply.init): hear and answer back, or pick what to say in a situation (`reply`, `when`)
 words/                 the dictionary: words.js (Words.add(n, [...]): every word, grouped by the unit that teaches it),
                        art.mjs (every word's drawing, in a section per teaching unit) → img/, audio/ (manifest.json)
 unit<N>/               one unit (see its CLAUDE.md):
@@ -44,7 +45,7 @@ tools/
   check.mjs            site checks (its header lists them); --fix writes cache stamps and pages' vocab scripts
   vocab-fields.mjs     every field a vocab entry may have and its kind of value, checked by check.mjs
   page-refs.mjs        the vocab groups and ids a page script names, which check.mjs resolves against the vocab
-  svg.mjs draw.mjs     shared drawing parts; art.mjs → img/*.svg
+  svg.mjs draw.mjs     shared drawing parts (glass, clockFace, sky...); art.mjs → img/*.svg
   tts.mjs review.mjs   vocab → audio (Azure es-MX) → AUDIO-REVIEW.md
   testing.mjs          the tiny runner every test uses (tester(name) → { ok, finish })
   *.test.mjs           run by check.mjs: spanish (syllables, stress), units (borrowing), site (retrying), page-refs, vocab-fields
@@ -84,7 +85,7 @@ tools/
 2. Serve locally (`python3 -m http.server`) and play the affected pages through in a browser at 390px and desktop, light and dark: no horizontal scroll, all audio plays, quizzes and levels complete, timers, stars and unlocks work.
 
 ## Roadmap
-Units build on each other: each reuses earlier words and adds one grammar point. Only unit 1 is built. **The order of units 2 onward is provisional** and may change until each is built; once a unit is built, its number is final.
+Units build on each other: each reuses earlier words and adds one grammar point. Units 1–2 are built. **The order of units 3 onward is provisional** and may change until each is built; once a unit is built, its number is final.
 
 | Stage | Units |
 |---|---|
@@ -92,4 +93,4 @@ Units build on each other: each reuses earlier words and adds one grammar point.
 | Daily life | 7 At the Taquería · 8 At the Café · 9 Time & Dates *La hora* · 10 Family *La familia* · 11 Getting Around *¿Dónde está?* · 12 Colours & Clothes *La ropa* · 13 Weather *El clima* · 14 Body & Health *El cuerpo* |
 | Conversation | 15 Daily Routine *Mi día* · 16 Likes & Hobbies *Me gusta* · 17 Feelings · 18 Comparing · 19 Past Weekend · 20 Plans *Planes* |
 
-Planned site-wide games, besides Stress Detective: **Say It Back** (record yourself and compare pitch with the model; port `shared/pitch.js` and `sayit.*` from learn-cantonese) and **Dictado** (hear a word or sentence and type it, accents included). Verb units (15 on) get a shared, tested `conjugate.js`.
+Planned site-wide games, besides Stress Detective and Reply Match: **Say It Back** (record yourself and compare pitch with the model; port `shared/pitch.js` and `sayit.*` from learn-cantonese) and **Dictado** (hear a word or sentence and type it, accents included). Verb units (15 on) get a shared, tested `conjugate.js`.

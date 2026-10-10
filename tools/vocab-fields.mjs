@@ -36,6 +36,8 @@ export const FIELDS = {
   // Borrowing (shared/units.js sets these)
   unit: 'number',                     // home unit
   taught: 'number',                   // a dictionary word's unit (Words.add sets it)
+  // Shared engines
+  reply: 'ids', when: 'texts',        // Reply Match (shared/reply.js): good answers, situations
   // Unit 1: sounds and spelling
   letter: 'text',                     // the letter or pair a word shows off (ll, ñ...)
   contrast: oneOf('vowel', 'r-rr', 'n-ny', 'stress'),  // what tells it apart from its family

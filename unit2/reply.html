@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Reply Match · Greetings</title>
+<link rel="stylesheet" href="../shared/theme.css?v=bafd08d9">
+<link rel="stylesheet" href="../shared/game.css?v=2eeb4fba">
+</head>
+<body>
+<main class="page">
+  <header class="page-header">
+    <a class="back" href="./">← Unit 2</a>
+    <p class="eyebrow">Unit 2 · Game</p>
+    <h1>Reply Match</h1>
+    <p class="lede">Someone says hello, thanks you or says sorry. What do you say back?</p>
+  </header>
+  <div id="game"></div>
+</main>
+<script src="../shared/core.js?v=ca0e05f7"></script>
+<script src="../shared/audio.js?v=eb4b9a31"></script>
+<script src="../shared/game.js?v=abe7126e"></script>
+<script src="../shared/reply.js?v=1e212201"></script>
+<!-- vocab: written by node tools/check.mjs --fix -->
+<script src="../shared/units.js?v=f1bec249"></script>
+<script src="../words/words.js?v=c95d0dac"></script>
+<script src="vocab.js?v=e93c08b4"></script>
+<!-- /vocab -->
+<script>
+  const V = window.VOCAB;
+  const everyEntry = Core.entries(V);
+  Reply.init({
+    root: document.getElementById('game'),
+    key: 'u2-reply',
+    vocab: V,
+    levels: [
+      { id: 'meaning', name: 'Hear it', blurb: 'Hear a phrase and pick what it means.', modes: ['meaning'], pool: everyEntry },
+      { id: 'reply', name: 'Answer back', blurb: 'Someone speaks to you. What do you say back?', modes: ['reply'], pool: everyEntry.filter(entry => entry.reply) },
+      { id: 'when', name: 'What do you say?', blurb: 'Tú or usted? Perdón or lo siento? Pick the phrase for the situation.', modes: ['when'], pool: everyEntry.filter(entry => entry.when) },
+      { id: 'rush', name: 'Rush', blurb: 'Answers and situations mixed, eight seconds each.', modes: ['reply', 'when'], pool: everyEntry.filter(entry => entry.reply || entry.when), time: 8 },
+    ],
+  });
+</script>
+</body>
+</html>

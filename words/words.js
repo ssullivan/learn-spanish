@@ -94,3 +94,41 @@ Words.add(1, [
   { id: 'excelente', spanish: '¡Excelente!', english: 'Excellent!', img: false },
   { id: 'muy-bien', spanish: '¡Muy bien!', english: 'Very good!', img: false },
 ]);
+
+// Unit 2 · Greetings · Saludos
+Words.add(2, [
+  // Hello and goodbye
+  { id: 'buenos-dias', spanish: 'Buenos días', english: 'Good morning', note: 'Until about noon.' },
+  { id: 'buenas-tardes', spanish: 'Buenas tardes', english: 'Good afternoon', note: 'From noon until dark.' },
+  { id: 'buenas-noches', spanish: 'Buenas noches', english: 'Good evening; good night', note: 'After dark, to say hello or goodbye.' },
+  { id: 'adios', spanish: 'Adiós', english: 'Goodbye' },
+  { id: 'hasta-luego', spanish: 'Hasta luego', english: 'See you later', img: false, note: 'The everyday goodbye, even if it won\'t be soon.' },
+  { id: 'hasta-manyana', spanish: 'Hasta mañana', english: 'See you tomorrow', img: false },
+  { id: 'nos-vemos', spanish: 'Nos vemos', english: 'See you', img: false },
+
+  // How are you?
+  { id: 'como-estas', spanish: '¿Cómo estás?', english: 'How are you? (tú)', img: false },
+  { id: 'como-esta-usted', spanish: '¿Cómo está usted?', english: 'How are you? (usted)', img: false },
+  { id: 'que-tal', spanish: '¿Qué tal?', english: 'How\'s it going?', img: false },
+  { id: 'que-onda', spanish: '¿Qué onda?', english: 'What\'s up?', img: false, note: 'Mexican slang, for friends.' },
+  { id: 'bien-gracias', spanish: 'Bien, gracias.', english: 'Fine, thanks.', img: false },
+  { id: 'muy-bien-gracias', spanish: 'Muy bien, gracias.', english: 'Very well, thanks.', img: false },
+  { id: 'mas-o-menos', spanish: 'Más o menos.', english: 'So-so.', img: false },
+  { id: 'y-tu', spanish: '¿Y tú?', english: 'And you? (tú)', img: false },
+  { id: 'y-usted', spanish: '¿Y usted?', english: 'And you? (usted)', img: false },
+
+  // Please, thank you, sorry
+  { id: 'por-favor', spanish: 'Por favor', english: 'Please', img: false },
+  { id: 'gracias', spanish: 'Gracias', english: 'Thank you' },
+  { id: 'muchas-gracias', spanish: 'Muchas gracias', english: 'Thank you very much', img: false },
+  { id: 'de-nada', spanish: 'De nada', english: 'You\'re welcome', img: false },
+  { id: 'perdon', spanish: 'Perdón', english: 'Excuse me; sorry', img: false, note: 'To get someone\'s attention, or for a small slip.' },
+  { id: 'con-permiso', spanish: 'Con permiso', english: 'Excuse me (may I pass?)', img: false, note: 'Before you squeeze past someone or leave the table.' },
+  { id: 'lo-siento', spanish: 'Lo siento', english: 'I\'m sorry', img: false, note: 'For real regret or sympathy.' },
+  { id: 'no-pasa-nada', spanish: 'No pasa nada', english: 'No problem; don\'t worry', img: false },
+  { id: 'adelante', spanish: 'Adelante', english: 'Go ahead', img: false },
+
+  // Meeting someone
+  { id: 'mucho-gusto', spanish: 'Mucho gusto', english: 'Nice to meet you', img: false },
+  { id: 'igualmente', spanish: 'Igualmente', english: 'Likewise', img: false },
+]);

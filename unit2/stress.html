@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Stress Detective · Greetings</title>
+<link rel="stylesheet" href="../shared/theme.css?v=bafd08d9">
+<link rel="stylesheet" href="../shared/game.css?v=2eeb4fba">
+</head>
+<body>
+<main class="page">
+  <header class="page-header">
+    <a class="back" href="./">← Unit 2</a>
+    <p class="eyebrow">Unit 2 · Game</p>
+    <h1>Stress Detective</h1>
+    <p class="lede">Hear a greeting and tap the stressed syllable: buenos <strong>dí</strong>as, a<strong>diós</strong>.</p>
+  </header>
+  <div id="game"></div>
+</main>
+<script src="../shared/core.js?v=ca0e05f7"></script>
+<script src="../shared/audio.js?v=eb4b9a31"></script>
+<script src="../shared/spanish.js?v=a1a133ef"></script>
+<script src="../shared/game.js?v=abe7126e"></script>
+<script src="../shared/stress.js?v=c370b85c"></script>
+<!-- vocab: written by node tools/check.mjs --fix -->
+<script src="../shared/units.js?v=f1bec249"></script>
+<script src="../words/words.js?v=c95d0dac"></script>
+<script src="vocab.js?v=e93c08b4"></script>
+<!-- /vocab -->
+<script>
+  const V = window.VOCAB;
+  const questions = Stress.questionsIn(Core.entries(V));
+  const isOneWord = question => Spanish.isOneWord(question.entry.spanish);
+  Stress.init({
+    root: document.getElementById('game'),
+    key: 'u2-stress',
+    levels: [
+      { id: 'words', name: 'One word', blurb: 'Adiós, gracias, igualmente.', pool: questions.filter(isOneWord) },
+      { id: 'phrases', name: 'In a phrase', blurb: 'Buenos días, hasta luego: find the stress of one word.', pool: questions.filter(question => !isOneWord(question)) },
+      { id: 'all', name: 'Against the clock', blurb: 'Every word, eight seconds each.', pool: questions, rounds: 12, time: 8 },
+    ],
+  });
+</script>
+</body>
+</html>
