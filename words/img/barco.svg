@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><title>a boat</title>
+  <path d="M8 104 C22 96 34 112 48 104 C62 96 74 112 88 104 C102 96 112 108 120 104 L120 124 L8 124 Z" fill="#00897b" opacity=".6"/>
+  <path d="M62 14 L62 82" stroke="#8d5524" stroke-width="4" stroke-linecap="round"/>
+  <path d="M66 18 L104 78 L66 78 Z" fill="#ffffff" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M58 30 L30 78 L58 78 Z" fill="#fdd835" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M16 84 L112 84 L98 104 L30 104 Z" fill="#e53935" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>

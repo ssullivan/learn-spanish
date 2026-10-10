@@ -1,0 +1,36 @@
+/*
+ * svg.mjs — shared pieces for the illustrations in words/art.mjs and
+ * unit<N>/art.mjs. Every drawing is 128×128, transparent, flat, in fixed
+ * colours (so it works on light and dark pages), with a <title>.
+ *
+ *   svg(title, body)    a complete SVG file; `title` is read by screen readers
+ *   OUTLINE             stroke attributes for the dark outline every shape has
+ *   COLOUR              the palette drawings share: { ink, white, cream,
+ *                       red, orange, yellow, green, teal, blue, purple,
+ *                       pink, brown, tan, grey }
+ *   shadow(cx, cy, rx)  a soft ground shadow under a thing
+ *   glass(drink)        a tall glass at the centre, filled with `drink`
+ *                       (a colour; null for empty)
+ */
+
+export const COLOUR = {
+  ink: '#3a2a30', white: '#ffffff', cream: '#fff4dc',
+  red: '#e53935', orange: '#fb8c00', yellow: '#fdd835', green: '#43a047', teal: '#00897b',
+  blue: '#1e88e5', purple: '#8e24aa', pink: '#ec407a', brown: '#8d5524', tan: '#d7a86e', grey: '#9e9e9e',
+};
+
+export const OUTLINE = `stroke="${COLOUR.ink}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"`;
+
+const escapeXml = text => text.replace(/[&<>]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[character]));
+
+export const svg = (title, body) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><title>${escapeXml(title)}</title>${body}</svg>\n`;
+
+export const shadow = (cx, cy, rx) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${Math.round(rx / 6)}" fill="${COLOUR.ink}" opacity=".15"/>`;
+
+export function glass(drink) {
+  const contents = drink ? `<path d="M42 50 L86 50 L82 108 L46 108 Z" fill="${drink}"/>` : '';
+  return `${shadow(64, 116, 28)}${contents}
+    <path d="M38 20 L90 20 L83 112 L45 112 Z" fill="${COLOUR.white}" fill-opacity=".35" ${OUTLINE}/>
+    <path d="M48 28 L46 96" stroke="${COLOUR.white}" stroke-width="4" stroke-linecap="round" opacity=".8"/>`;
+}

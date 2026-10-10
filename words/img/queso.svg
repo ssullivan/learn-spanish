@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><title>a wedge of cheese</title><ellipse cx="64" cy="108" rx="46" ry="8" fill="#3a2a30" opacity=".15"/>
+  <path d="M14 76 L110 50 L114 98 L18 104 Z" fill="#fdd835" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M14 76 L84 30 L110 50 Z" fill="#ffee80" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="40" cy="88" r="7" fill="#e6b800"/>
+  <circle cx="72" cy="78" r="5" fill="#e6b800"/>
+  <circle cx="94" cy="90" r="6" fill="#e6b800"/>
+  <circle cx="72" cy="50" r="4" fill="#e6b800"/></svg>

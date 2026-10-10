@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><title>a pineapple</title><ellipse cx="64" cy="118" rx="28" ry="5" fill="#3a2a30" opacity=".15"/>
+  <path d="M64 44 L52 8 L62 22 L64 2 L68 22 L78 8 Z" fill="#43a047" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M64 44 L40 20 L58 36 M64 44 L88 20 L70 36" fill="none" stroke="#43a047" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="64" cy="80" rx="30" ry="38" fill="#fdd835" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M44 56 L84 104 M38 74 L72 116 M56 46 L92 90 M84 56 L44 104 M90 74 L56 116 M72 46 L36 90" stroke="#c79100" stroke-width="2.5"/></svg>

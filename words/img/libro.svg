@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><title>a book</title><ellipse cx="64" cy="112" rx="42" ry="7" fill="#3a2a30" opacity=".15"/>
+  <path d="M28 26 L96 18 L100 98 L32 106 Z" fill="#ffffff" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M24 30 L92 22 L96 102 L28 110 Z" fill="#1e88e5" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M40 44 L80 39" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <path d="M41 56 L72 52" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/></svg>

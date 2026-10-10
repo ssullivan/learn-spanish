@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<title>Stress Detective · Sounds &amp; Spelling</title>
+<link rel="stylesheet" href="../shared/theme.css?v=bafd08d9">
+<link rel="stylesheet" href="../shared/game.css?v=2eeb4fba">
+</head>
+<body>
+<main class="page">
+  <header class="page-header">
+    <a class="back" href="./">← Unit 1</a>
+    <p class="eyebrow">Unit 1 · Game</p>
+    <h1>Stress Detective</h1>
+    <p class="lede">Hear a word and tap the syllable said loudest. Ca·sa or ca·sa?</p>
+  </header>
+  <div id="game"></div>
+</main>
+<script src="../shared/core.js?v=ca0e05f7"></script>
+<script src="../shared/audio.js?v=eb4b9a31"></script>
+<script src="../shared/spanish.js?v=a1a133ef"></script>
+<script src="../shared/game.js?v=abe7126e"></script>
+<script src="../shared/stress.js?v=ee173b8f"></script>
+<!-- vocab: written by node tools/check.mjs --fix -->
+<script src="../shared/units.js?v=f1bec249"></script>
+<script src="../words/words.js?v=eee3a481"></script>
+<script src="vocab.js?v=626ed505"></script>
+<!-- /vocab -->
+<script>
+  const V = window.VOCAB;
+  const words = Stress.wordsIn(Core.entries(V));
+  const hasAccentMark = entry => /[áéíóú]/.test(entry.spanish);
+  Stress.init({
+    root: document.getElementById('game'),
+    key: 'u1-stress',
+    levels: [
+      { id: 'two', name: 'Two syllables', blurb: 'Casa, perro, reloj: first or second?', pool: words.filter(entry => Spanish.syllables(entry.spanish).length === 2) },
+      { id: 'marks', name: 'Accent marks', blurb: 'The mark tells you: café, árbol, teléfono.', pool: words.filter(hasAccentMark) },
+      { id: 'long', name: 'Longer words', blurb: 'Three syllables and more.', pool: words.filter(entry => Spanish.syllables(entry.spanish).length >= 3) },
+      { id: 'ears', name: 'Ears only', blurb: 'No spelling, no accent marks: just listen.', pool: words, showWord: false, rounds: 10 },
+    ],
+  });
+</script>
+</body>
+</html>

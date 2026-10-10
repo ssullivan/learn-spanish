@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><title>a key</title>
+  <g transform="rotate(-35 64 64)">
+    <circle cx="34" cy="64" r="22" fill="#fdd835" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="34" cy="64" r="9" fill="#ffffff" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M56 58 L114 58 L114 70 L104 70 L104 82 L94 82 L94 70 L86 70 L86 78 L76 78 L76 70 L56 70 Z" fill="#fdd835" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  </g></svg>

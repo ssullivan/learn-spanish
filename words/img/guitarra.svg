@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128"><title>a guitar</title>
+  <g transform="rotate(35 64 64)">
+    <rect x="59" y="4" width="10" height="56" fill="#8d5524" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <rect x="54" y="0" width="20" height="12" rx="3" fill="#3a2a30"/>
+    <path d="M64 50 C84 50 86 64 80 72 C94 78 94 112 64 112 C34 112 34 78 48 72 C42 64 44 50 64 50 Z" fill="#fb8c00" stroke="#3a2a30" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+    <circle cx="64" cy="80" r="9" fill="#3a2a30"/>
+    <rect x="54" y="96" width="20" height="5" fill="#3a2a30"/>
+    <path d="M62 10 L62 98 M66 10 L66 98" stroke="#fff4dc" stroke-width="1"/>
+  </g></svg>
