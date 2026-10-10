@@ -36,7 +36,7 @@
       { ...Words.get('guitarra'), letter: 'gu', note: 'In gue and gui the u is silent.' },
       { ...Words.get('queso'), letter: 'qu', note: 'Qu sounds like k; the u is silent.' },
       { ...Words.get('llave'), letter: 'll', note: 'Ll sounds like the y in yes.' },
-      { ...Words.get('yo'), letter: 'y', note: 'Y sounds like ll.' },
+      { ...Words.get('playa'), letter: 'y', note: 'Y sounds like ll.' },
       { ...Words.get('pinya'), letter: 'ñ', note: 'Ñ sounds like the ny in canyon.' },
       { ...Words.get('perro'), letter: 'rr', contrast: 'r-rr', family: 'pero', note: 'Rr is rolled: the tip of the tongue trills.' },
       { ...Words.get('zapato'), letter: 'z', note: 'In Mexico z sounds like s.' },

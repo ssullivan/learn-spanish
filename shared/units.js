@@ -33,6 +33,18 @@
  *   Units.byId(vocabOrList)
  *                         { id: entry } for every entry in every list of a
  *                         vocab object, or of one list of entries
+ *   Units.sentences(vocab)
+ *                         say(ids, english, extra?): a sentence entry made of
+ *                         the entries with those space-separated ids (looked
+ *                         up in vocab as it is when say is made); an id ending
+ *                         in "," puts a comma after its word. The Spanish is
+ *                         the words joined, capitalised, and closed (going by
+ *                         the English before any "(note)") by
+ *                         "¿…?" if english ends in "?", "¡…!" if in "!", else
+ *                         "."; words: [ids] (for Tiles.round); id: its plain
+ *                         spelling (Spanish.plainId), plus "-question" for a
+ *                         question, so a question and its statement (Ella es
+ *                         maestra.) can both exist; img: false; plus extra
  *   window.UNITS          { n: vocab } for every loaded unit
  */
 (function (root) {
@@ -72,6 +84,25 @@
 
   const list = ids => ids.trim().split(/\s+/).map(get);
 
-  root.Units = { add, word, teaches, byId };
+  const capitalised = text => text.charAt(0).toUpperCase() + text.slice(1);
+  // The English's own punctuation, before any note in brackets: "What is your name? (usted)".
+  const closingMark = english => english.replace(/\s*\([^)]*\)$/, '').slice(-1);
+  const punctuated = (text, english) => ({ '?': `¿${capitalised(text)}?`, '!': `¡${capitalised(text)}!` }[closingMark(english)] ?? `${capitalised(text)}.`);
+
+  function sentences(vocab) {
+    const entryById = byId(vocab);
+    return (ids, english, extra) => {
+      const parts = ids.trim().split(/\s+/).map(token => {
+        const id = token.replace(/,$/, '');
+        if (!entryById[id]) throw new Error(`no word ${id} for "${english}"`);
+        return { entry: entryById[id], comma: token.endsWith(',') };
+      });
+      const spanish = punctuated(parts.map(({ entry, comma }) => entry.spanish + (comma ? ',' : '')).join(' '), english);
+      const id = root.Spanish.plainId(spanish) + (closingMark(english) === '?' ? '-question' : '');
+      return { id, words: parts.map(({ entry }) => entry.id), spanish, english, img: false, ...extra };
+    };
+  }
+
+  root.Units = { add, word, teaches, byId, sentences };
   root.Words = { add: addWords, get, list, voice: undefined };
 })(typeof window !== 'undefined' ? window : globalThis);

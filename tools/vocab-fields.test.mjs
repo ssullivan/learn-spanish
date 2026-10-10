@@ -17,6 +17,7 @@ const reports = (extra, text) => problems(extra).some(problem => problem.include
 ok('a plain word has no problems', problems({}).length === 0, problems({}).join('; '));
 ok('every field with a good value has no problems', problems({
   note: 'A note.', img: false, say: 'perro', voice: 'es-MX-JorgeNeural', unit: 1, letter: 'rr', contrast: 'r-rr', family: 'pero', reply: ['mesa'], when: ['At home.'],
+  words: ['pero', 'perro'], person: 'third-singular', gender: 'masculine',
 }).length === 0, problems({ img: false }).join('; '));
 
 // Misspelt and missing fields.

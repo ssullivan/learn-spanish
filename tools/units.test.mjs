@@ -12,7 +12,7 @@ import { ROOT, loadShared, loadVocab, entries, isOwn, homeOf } from './site.mjs'
 import { tester } from './testing.mjs';
 
 const { ok, finish } = tester('units');
-const sandbox = loadShared('shared/units.js', 'shared/core.js');
+const sandbox = loadShared('shared/spanish.js', 'shared/units.js', 'shared/core.js');
 const { Units, Words, Core } = sandbox;
 const throws = action => { try { action(); return false; } catch { return true; } };
 
@@ -54,6 +54,21 @@ const entryById = Units.byId({ voice: 'x', words: [{ id: 'a' }, { id: 'b' }], mo
 ok('byId has every entry of every list', Object.keys(entryById).join() === 'a,b,c', Object.keys(entryById).join());
 ok('byId of one list', Object.keys(Units.byId([{ id: 'x' }, { id: 'y' }])).join() === 'x,y');
 ok('byId gives the entries themselves', Units.byId(sandbox.UNITS[3]).gato === sandbox.UNITS[3].phrases[0]);
+
+// Sentences from word ids
+const say = Units.sentences({ words: [
+  { id: 'yo', spanish: 'yo' }, { id: 'soy', spanish: 'soy' }, { id: 'eres', spanish: 'eres' }, { id: 'de', spanish: 'de' },
+  { id: 'mexico', spanish: 'México' }, { id: 'si-tilde', spanish: 'sí' }, { id: 'como-tilde', spanish: 'cómo' }, { id: 'te-llamas', spanish: 'te llamas' },
+] });
+const statement = say('yo soy de mexico', 'I am from Mexico.', { note: 'n' });
+ok('a statement is capitalised and ends in "."', statement.spanish === 'Yo soy de México.' && statement.id === 'yo-soy-de-mexico', JSON.stringify(statement));
+ok('a sentence keeps its word ids, has no picture, and takes extra fields', statement.words.join() === 'yo,soy,de,mexico' && statement.img === false && statement.note === 'n');
+const question = say('eres de mexico', 'Are you from Mexico?');
+ok('a question gets ¿ ? and an id ending in -question', question.spanish === '¿Eres de México?' && question.id === 'eres-de-mexico-question', JSON.stringify(question));
+ok('a question is told by the English before a (note)', say('como-tilde te-llamas', 'What is your name? (tú)').spanish === '¿Cómo te llamas?', say('como-tilde te-llamas', 'What is your name? (tú)').spanish);
+ok('an id ending in "," puts a comma after its word', say('si-tilde, soy de mexico', 'Yes, I am from Mexico.').spanish === 'Sí, soy de México.', say('si-tilde, soy de mexico', 'Yes, I am from Mexico.').spanish);
+ok('an exclamation gets ¡ !', say('si-tilde', 'Yes!').spanish === '¡Sí!');
+ok('a sentence with an unknown word throws', throws(() => say('yo soy ana', 'I am Ana.')));
 
 // The real site
 ok('loadVocab("words") is the dictionary, with its voice', typeof loadVocab('words')?.voice === 'string');

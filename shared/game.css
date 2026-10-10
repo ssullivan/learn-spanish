@@ -5,7 +5,9 @@
  * .stage (.locked after answering), .game-feedback, .game-end (.perfect:
  * the stars pop in), canvas.celebrate (Game.celebrate), .stars, .speech (a
  * speech bubble, Core.speech), .prompt-pic (big picture to answer about),
- * .syllable-row > .choice.syllable (Stress Detective's syllables).
+ * .syllable-row > .choice.syllable (Stress Detective's syllables),
+ * .tile-line / .tile-bank > button.tile (word tiles, tiles.js; .tile-line
+ * .right / .wrong).
  */
 
 /* Level menu */
@@ -101,6 +103,36 @@
 /* Stress Detective: a row of syllables */
 .syllable-row { display: flex; flex-wrap: wrap; gap: 10px; max-width: 640px; }
 .choice.syllable { min-width: 84px; padding: 14px 18px; font-size: 26px; }
+
+/* Word tiles (tiles.js) */
+.tile-line, .tile-bank { display: flex; flex-wrap: wrap; gap: 8px; max-width: 664px; }
+.tile-line {
+  min-height: 64px;
+  margin-bottom: 14px;
+  padding: 10px;
+  border: 2px dashed var(--line);
+  border-radius: 14px;
+  align-content: flex-start;
+}
+.tile-line:empty::before { content: attr(data-empty); color: var(--ink-soft); align-self: center; padding: 0 6px; }
+.tile-line.right { border-style: solid; border-color: var(--good); background: color-mix(in srgb, var(--good) 10%, var(--surface)); }
+.tile-line.wrong { border-style: solid; border-color: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--surface)); }
+.tile-bank { margin-bottom: 16px; }
+.tile {
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  color: inherit;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) { .tile:hover { border-color: var(--ink-soft); } }
+.tile:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.tile-line .tile { border-color: var(--accent); }
 
 /* End screen */
 .game-end { text-align: center; padding: 16px 0; }

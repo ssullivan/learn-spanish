@@ -21,10 +21,12 @@ shared/                every page's code; each file's header comment documents i
   core.js              Core.*: el, esc, es, shuffle, pick, deck, play, picButton, speech, store...
   audio.js             Speak.play: MP3s with an es-MX speechSynthesis fallback
   spanish.js           Spanish.syllables, stressedSyllable, plainId, isOneWord (runs in Node too)
-  units.js             Words.add/get/list (the dictionary); Units.add, Units.word (borrowing), Units.teaches, Units.byId
+  units.js             Words.add/get/list (the dictionary); Units.add, Units.word (borrowing), Units.teaches, Units.byId,
+                       Units.sentences (sentences from word ids)
   learn.*              learn-page engine (Learn.init)
   game.*               game engine (Game.init: levels, rounds, timer, stars, unlocks; Game.choose, pic, answerText...)
   stress.js            Stress Detective (Stress.init, Stress.questionsIn: a word, or one word of a phrase), and Stress.marked
+  tiles.js             Tiles.round: build a sentence from word tiles, for Game.init
   reply.js             Reply Match (Reply.init): hear and answer back, or pick what to say in a situation (`reply`, `when`)
 words/                 the dictionary: words.js (Words.add(n, [...]): every word, grouped by the unit that teaches it),
                        art.mjs (every word's drawing, in a section per teaching unit) → img/, audio/ (manifest.json)
@@ -45,16 +47,18 @@ tools/
   check.mjs            site checks (its header lists them); --fix writes cache stamps and pages' vocab scripts
   vocab-fields.mjs     every field a vocab entry may have and its kind of value, checked by check.mjs
   page-refs.mjs        the vocab groups and ids a page script names, which check.mjs resolves against the vocab
-  svg.mjs draw.mjs     shared drawing parts (glass, clockFace, sky...); art.mjs → img/*.svg
+  svg.mjs draw.mjs     shared drawing parts (glass, clockFace, sky, person, pointingArm...); art.mjs → img/*.svg
   tts.mjs review.mjs   vocab → audio (Azure es-MX) → AUDIO-REVIEW.md
   testing.mjs          the tiny runner every test uses (tester(name) → { ok, finish })
-  *.test.mjs           run by check.mjs: spanish (syllables, stress), units (borrowing), site (retrying), page-refs, vocab-fields
+  *.test.mjs           run by check.mjs: spanish (syllables, stress), stress (Stress Detective's questions), grammar
+                       (sentences agree in person and gender), units (borrowing), site (retrying), page-refs, vocab-fields
 ```
 
 ## Words, audio and pictures
 - Every word lives once, in the dictionary `words/words.js`, under the unit that teaches it (`Words.add(n, [...])`, which sets `taught: n`): `{ id, spanish, english, note?, img?, say?, ssml?, voice? }`. Its audio, picture and drawing are in `words/`. Every field is listed with the kind of value it holds in `tools/vocab-fields.mjs`, and check.mjs fails on any other field, a wrong value, or an id that names no entry: add a new field there first. `img: false` means no picture.
 - A word's id is its plain spelling (`Spanish.plainId`: lower case, no accents, ñ as `ny`, words joined by `-`: `piña` → `pinya`, `¡Buenos días!` → `buenos-dias`). Ids are unique on the site: when two words would share one, the one with the accent mark gets `-tilde` (`papa`, `papa-tilde`), or another gets a suffix naming its sense. check.mjs enforces both, and that no two homes define the same spelling with the same voice.
 - A unit's `vocab.js` lists the words it uses with `Words.get(id)` or `...Words.list('a b c')`, in the groups its pages read, adding its own fields to the copy: `{ ...Words.get('perro'), letter: 'rr' }`. It uses only words taught in it or earlier, and lists every word it teaches; check.mjs enforces both. A new word goes in the dictionary under the unit that first teaches it; never write one into a `vocab.js`.
+- Derive, don't type: a unit's sentences are built from word ids at the bottom of its `vocab.js` with `Units.sentences` (`say('yo soy estudiante', 'I am a student.')`), which joins, capitalises and punctuates them (`¿…?` when the English is a question; a question's id ends in `-question`). They get audio like any entry. Words carry `person` and `gender` where they have one, and `tools/grammar.test.mjs` fails on a sentence whose words disagree, or whose speaker's voice doesn't match a first-person gendered word: a sentence a man says has `voice: 'es-MX-JorgeNeural'`.
 - `Units.word(n, id)` borrows unit n's own version of an entry (a phrase it built, or a word with what unit n added). Its files stay where they are. Pages load the `vocab.js` of the units their unit borrows from this way, and no others (`tools/site.mjs` borrowsFrom).
 - Spelling: Mexican Spanish (carro, computadora, jugo, ustedes; no vosotros). `spanish` is typed in composed Unicode with real accent marks, questions open with `¿` and exclamations with `¡`; check.mjs enforces all three.
 - Pictures: a word's drawing goes in `words/art.mjs`, in the section of the unit that teaches it (a function, so its helpers stay its own); a phrase's in its unit's `art.mjs`. Run `node tools/draw.mjs` (which also deletes svgs no longer drawn). Reuse or extend `tools/svg.mjs` parts instead of copying markup. 128×128 flat style, fixed colours, transparent background, a `<title>`. Render and look at new drawings before committing (headless Chrome: `google-chrome --headless=new --screenshot=out.png file://...`).
@@ -85,7 +89,7 @@ tools/
 2. Serve locally (`python3 -m http.server`) and play the affected pages through in a browser at 390px and desktop, light and dark: no horizontal scroll, all audio plays, quizzes and levels complete, timers, stars and unlocks work.
 
 ## Roadmap
-Units build on each other: each reuses earlier words and adds one grammar point. Units 1–2 are built. **The order of units 3 onward is provisional** and may change until each is built; once a unit is built, its number is final.
+Units build on each other: each reuses earlier words and adds one grammar point. Units 1–3 are built. **The order of units 4 onward is provisional** and may change until each is built; once a unit is built, its number is final.
 
 | Stage | Units |
 |---|---|
@@ -93,4 +97,4 @@ Units build on each other: each reuses earlier words and adds one grammar point.
 | Daily life | 7 At the Taquería · 8 At the Café · 9 Time & Dates *La hora* · 10 Family *La familia* · 11 Getting Around *¿Dónde está?* · 12 Colours & Clothes *La ropa* · 13 Weather *El clima* · 14 Body & Health *El cuerpo* |
 | Conversation | 15 Daily Routine *Mi día* · 16 Likes & Hobbies *Me gusta* · 17 Feelings · 18 Comparing · 19 Past Weekend · 20 Plans *Planes* |
 
-Planned site-wide games, besides Stress Detective and Reply Match: **Say It Back** (record yourself and compare pitch with the model; port `shared/pitch.js` and `sayit.*` from learn-cantonese) and **Dictado** (hear a word or sentence and type it, accents included). Verb units (15 on) get a shared, tested `conjugate.js`.
+Planned site-wide games, besides Stress Detective, Reply Match and word tiles: **Say It Back** (record yourself and compare pitch with the model; port `shared/pitch.js` and `sayit.*` from learn-cantonese) and **Dictado** (hear a word or sentence and type it, accents included). Verb units (15 on) get a shared, tested `conjugate.js`.

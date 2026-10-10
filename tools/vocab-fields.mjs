@@ -37,11 +37,17 @@ export const FIELDS = {
   unit: 'number',                     // home unit
   taught: 'number',                   // a dictionary word's unit (Words.add sets it)
   // Shared engines
+  words: 'ids',                       // a derived sentence's words (Units.sentences, Tiles.round)
   reply: 'ids', when: 'texts',        // Reply Match (shared/reply.js): good answers, situations
+  // Grammar (tools/grammar.test.mjs checks sentences agree)
+  person: oneOf('first-singular', 'second-singular', 'third-singular', 'first-plural', 'third-plural'),  // a subject pronoun's, or a verb form's
+  gender: oneOf('masculine', 'feminine'),                       // a pronoun's or noun's
   // Unit 1: sounds and spelling
   letter: 'text',                     // the letter or pair a word shows off (ll, ñ...)
   contrast: oneOf('vowel', 'r-rr', 'n-ny', 'stress'),  // what tells it apart from its family
   family: 'id',                       // the word its sound-alike family is named after
+  // Unit 3: me and you
+  job: 'id',                          // the job an Answer Back question or answer is about
 };
 
 const KIND_NAMES = {

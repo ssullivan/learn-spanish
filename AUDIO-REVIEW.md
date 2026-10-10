@@ -1,6 +1,6 @@
 # Audio review
 
-Every clip on the site (92), unit by unit. Each link plays one clip.
+Every clip on the site (177), unit by unit. Each link plays one clip.
 
 Generated from each unit's `vocab.js` by `tools/review.mjs`: don't edit this file by hand.
 
@@ -21,7 +21,7 @@ Generated from each unit's `vocab.js` by `tools/review.mjs`: don't edit this fil
 | 11 | guitarra | guitar | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/guitarra.mp3) |
 | 12 | queso | cheese | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/queso.mp3) |
 | 13 | llave | key | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/llave.mp3) |
-| 14 | yo | I | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/yo.mp3) |
+| 14 | playa | beach | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/playa.mp3) |
 | 15 | piña | pineapple | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/pinya.mp3) |
 | 16 | perro | dog | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/perro.mp3) |
 | 17 | zapato | shoe | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/zapato.mp3) |
@@ -105,3 +105,93 @@ Generated from each unit's `vocab.js` by `tools/review.mjs`: don't edit this fil
 | 25 | Adelante | Go ahead | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/adelante.mp3) |
 | 26 | Mucho gusto | Nice to meet you | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/mucho-gusto.mp3) |
 | 27 | Igualmente | Likewise | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/igualmente.mp3) |
+
+## Unit 3
+
+| # | Spanish | English | Audio |
+|---|---|---|---|
+| 1 | yo | I | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/yo.mp3) |
+| 2 | tú | you (a friend) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/tu-tilde.mp3) |
+| 3 | usted | you (polite) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/usted.mp3) |
+| 4 | él | he | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/el-tilde.mp3) |
+| 5 | ella | she | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/ella.mp3) |
+| 6 | nosotros | we | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/nosotros.mp3) |
+| 7 | ustedes | you (all) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/ustedes.mp3) |
+| 8 | ellos | they | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/ellos.mp3) |
+| 9 | soy | I am | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/soy.mp3) |
+| 10 | eres | you are (tú) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/eres.mp3) |
+| 11 | es | is; you are (usted) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/es.mp3) |
+| 12 | somos | we are | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/somos.mp3) |
+| 13 | son | they are; you (all) are | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/son.mp3) |
+| 14 | estudiante | student | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/estudiante.mp3) |
+| 15 | maestro | teacher (a man) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/maestro.mp3) |
+| 16 | maestra | teacher (a woman) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/maestra.mp3) |
+| 17 | doctora | doctor (a woman) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/doctora.mp3) |
+| 18 | amigo | friend (a man) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/amigo.mp3) |
+| 19 | amiga | friend (a woman) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/amiga.mp3) |
+| 20 | mexicano | Mexican (a man) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/mexicano.mp3) |
+| 21 | mexicana | Mexican (a woman) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/mexicana.mp3) |
+| 22 | México | Mexico | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/mexico.mp3) |
+| 23 | Estados Unidos | the United States | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/estados-unidos.mp3) |
+| 24 | Canadá | Canada | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/canada.mp3) |
+| 25 | Ana | Ana | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/ana.mp3) |
+| 26 | Luis | Luis | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/luis.mp3) |
+| 27 | me llamo | my name is | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/me-llamo.mp3) |
+| 28 | te llamas | your name is (tú) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/te-llamas.mp3) |
+| 29 | se llama | his, her or your (usted) name is | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/se-llama.mp3) |
+| 30 | quién | who | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/quien.mp3) |
+| 31 | qué | what | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/que-tilde.mp3) |
+| 32 | cómo | how | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/como-tilde.mp3) |
+| 33 | dónde | where | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/donde-tilde.mp3) |
+| 34 | de | from, of | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/de.mp3) |
+| 35 | sí | yes | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/si-tilde.mp3) |
+| 36 | no | no; not | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/no.mp3) |
+| 37 | también | too, also | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/tambien.mp3) |
+| 38 | hablas | you speak (tú) | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/hablas.mp3) |
+| 39 | español | Spanish | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/espanyol.mp3) |
+| 40 | inglés | English | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/ingles.mp3) |
+| 41 | un poco | a little | [▶ play](https://ssullivan.github.io/learn-spanish/words/audio/un-poco.mp3) |
+| 42 | Yo soy estudiante. | I am a student. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/yo-soy-estudiante.mp3) |
+| 43 | Ella es maestra. | She is a teacher. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/ella-es-maestra.mp3) |
+| 44 | Él es doctor. | He is a doctor. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/el-es-doctor.mp3) |
+| 45 | Yo soy maestro. | I am a teacher. _(Jorge voice)_ | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/yo-soy-maestro.mp3) |
+| 46 | Usted es doctora. | You are a doctor. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/usted-es-doctora.mp3) |
+| 47 | Él es mexicano. | He is Mexican. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/el-es-mexicano.mp3) |
+| 48 | Ella es mexicana. | She is Mexican. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/ella-es-mexicana.mp3) |
+| 49 | Nosotros somos de México. | We are from Mexico. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/nosotros-somos-de-mexico.mp3) |
+| 50 | Ellos son de Canadá. | They are from Canada. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/ellos-son-de-canada.mp3) |
+| 51 | Ustedes son de Estados Unidos. | You (all) are from the United States. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/ustedes-son-de-estados-unidos.mp3) |
+| 52 | Tú eres amiga. | You are a friend. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/tu-eres-amiga.mp3) |
+| 53 | Yo también soy estudiante. | I am a student too. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/yo-tambien-soy-estudiante.mp3) |
+| 54 | Soy de México. | I am from Mexico. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/soy-de-mexico.mp3) |
+| 55 | Yo no soy maestra. | I am not a teacher. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/yo-no-soy-maestra.mp3) |
+| 56 | Él no es mexicano. | He is not Mexican. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/el-no-es-mexicano.mp3) |
+| 57 | Ella no es doctora. | She is not a doctor. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/ella-no-es-doctora.mp3) |
+| 58 | No somos de Canadá. | We are not from Canada. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/no-somos-de-canada.mp3) |
+| 59 | No hablo inglés. | I don't speak English. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/no-hablo-ingles.mp3) |
+| 60 | ¿Tú eres estudiante? | Are you a student? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/tu-eres-estudiante-question.mp3) |
+| 61 | ¿Eres estudiante? | Are you a student? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/eres-estudiante-question.mp3) |
+| 62 | ¿Usted es de México? | Are you from Mexico? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/usted-es-de-mexico-question.mp3) |
+| 63 | ¿Eres de México? | Are you from Mexico? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/eres-de-mexico-question.mp3) |
+| 64 | ¿Hablas español? | Do you speak Spanish? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/hablas-espanyol-question.mp3) |
+| 65 | ¿Él es mexicano? | Is he Mexican? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/el-es-mexicano-question.mp3) |
+| 66 | ¿Quién es él? | Who is he? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/quien-es-el-question.mp3) |
+| 67 | ¿Quién es Ana? | Who is Ana? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/quien-es-ana-question.mp3) |
+| 68 | ¿Cómo te llamas? | What is your name? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/como-te-llamas-question.mp3) |
+| 69 | ¿Cómo se llama usted? | What is your name? (usted) | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/como-se-llama-usted-question.mp3) |
+| 70 | ¿De dónde eres? | Where are you from? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/de-donde-eres-question.mp3) |
+| 71 | ¿De dónde es usted? | Where are you from? (usted) | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/de-donde-es-usted-question.mp3) |
+| 72 | Me llamo Ana. | My name is Ana. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/me-llamo-ana.mp3) |
+| 73 | Me llamo Luis. | My name is Luis. _(Jorge voice)_ | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/me-llamo-luis.mp3) |
+| 74 | Sí, soy estudiante. | Yes, I am a student. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/si-soy-estudiante.mp3) |
+| 75 | No, no soy maestra. | No, I am not a teacher. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/no-no-soy-maestra.mp3) |
+| 76 | Hablo un poco de español. | I speak a little Spanish. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/hablo-un-poco-de-espanyol.mp3) |
+| 77 | ¿Ella es estudiante? | Is she a student? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/ella-es-estudiante-question.mp3) |
+| 78 | ¿Ella es maestra? | Is she a teacher? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/ella-es-maestra-question.mp3) |
+| 79 | ¿Ella es doctora? | Is she a doctor? | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/ella-es-doctora-question.mp3) |
+| 80 | Sí, es estudiante. | Yes, she is a student. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/si-es-estudiante.mp3) |
+| 81 | Sí, es maestra. | Yes, she is a teacher. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/si-es-maestra.mp3) |
+| 82 | Sí, es doctora. | Yes, she is a doctor. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/si-es-doctora.mp3) |
+| 83 | No, es estudiante. | No, she is a student. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/no-es-estudiante.mp3) |
+| 84 | No, es maestra. | No, she is a teacher. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/no-es-maestra.mp3) |
+| 85 | No, es doctora. | No, she is a doctor. | [▶ play](https://ssullivan.github.io/learn-spanish/unit3/audio/no-es-doctora.mp3) |

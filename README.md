@@ -10,6 +10,8 @@ The course is planned as 20 units, each building on the ones before (the roadmap
   - *Stress Detective*: hear a word and tap its loudest syllable, ending with a level by ear alone.
 - **Unit 2 · Saludos · Greetings**: hello and goodbye by the time of day, ¿cómo estás? or ¿cómo está usted?, please and thank you, and perdón, con permiso or lo siento.
   - *Reply Match*: hear a phrase and answer back, or pick what to say in a situation (tú or usted?).
+- **Unit 3 · Yo y tú · Me & You**: yo, tú, él, ella and the rest; soy, eres, es, somos, son; maestro or maestra; no; yes/no questions; quién, cómo and de dónde.
+  - *Question Builder*: build sentences and questions from word tiles, and answer sí or no about a picture.
 
 **Reviewing the audio:** native speakers can listen to every recording in [AUDIO-REVIEW.md](AUDIO-REVIEW.md).
 

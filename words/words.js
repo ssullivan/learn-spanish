@@ -35,7 +35,7 @@ Words.add(1, [
   { id: 'guitarra', spanish: 'guitarra', english: 'guitar' },
   { id: 'queso', spanish: 'queso', english: 'cheese' },
   { id: 'llave', spanish: 'llave', english: 'key' },
-  { id: 'yo', spanish: 'yo', english: 'I', img: false },
+  { id: 'playa', spanish: 'playa', english: 'beach', img: false },
   { id: 'pinya', spanish: 'piña', english: 'pineapple' },
   { id: 'perro', spanish: 'perro', english: 'dog' },
   { id: 'zapato', spanish: 'zapato', english: 'shoe' },
@@ -65,7 +65,7 @@ Words.add(1, [
   { id: 'canya', spanish: 'caña', english: 'sugar cane', img: false },
   { id: 'papa', spanish: 'papa', english: 'potato', img: false },
   { id: 'papa-tilde', spanish: 'papá', english: 'dad', img: false },
-  { id: 'hablo', spanish: 'hablo', english: 'I speak', img: false },
+  { id: 'hablo', spanish: 'hablo', english: 'I speak', img: false, person: 'first-singular' },
   { id: 'hablo-tilde', spanish: 'habló', english: 'she or he spoke', img: false },
   { id: 'sabana', spanish: 'sabana', english: 'savanna', img: false },
   { id: 'sabana-tilde', spanish: 'sábana', english: 'bed sheet', img: false },
@@ -79,7 +79,7 @@ Words.add(1, [
   { id: 'arbol', spanish: 'árbol', english: 'tree', img: false },
   { id: 'reloj', spanish: 'reloj', english: 'clock, watch', img: false },
   { id: 'ciudad', spanish: 'ciudad', english: 'city', img: false },
-  { id: 'doctor', spanish: 'doctor', english: 'doctor', img: false },
+  { id: 'doctor', spanish: 'doctor', english: 'doctor', img: false, gender: 'masculine' },
   { id: 'hospital', spanish: 'hospital', english: 'hospital', img: false },
   { id: 'animal', spanish: 'animal', english: 'animal', img: false },
   { id: 'chocolate', spanish: 'chocolate', english: 'chocolate', img: false },
@@ -131,4 +131,59 @@ Words.add(2, [
   // Meeting someone
   { id: 'mucho-gusto', spanish: 'Mucho gusto', english: 'Nice to meet you', img: false },
   { id: 'igualmente', spanish: 'Igualmente', english: 'Likewise', img: false },
+]);
+
+// Unit 3 · Me & You · Yo y tú. Words with an unaccented twin that later
+// units teach (el, tu, si, que, como, donde) get -tilde now.
+Words.add(3, [
+  // Subject pronouns: each with its grammatical person, and gender where it shows
+  { id: 'yo', spanish: 'yo', english: 'I', person: 'first-singular' },
+  { id: 'tu-tilde', spanish: 'tú', english: 'you (a friend)', person: 'second-singular' },
+  { id: 'usted', spanish: 'usted', english: 'you (polite)', person: 'third-singular', note: 'Takes the same verb as él and ella.' },
+  { id: 'el-tilde', spanish: 'él', english: 'he', person: 'third-singular', gender: 'masculine' },
+  { id: 'ella', spanish: 'ella', english: 'she', person: 'third-singular', gender: 'feminine' },
+  { id: 'nosotros', spanish: 'nosotros', english: 'we', person: 'first-plural', note: 'Nosotras if everyone is a woman.' },
+  { id: 'ustedes', spanish: 'ustedes', english: 'you (all)', person: 'third-plural', note: 'In Mexico, for friends and strangers alike.' },
+  { id: 'ellos', spanish: 'ellos', english: 'they', person: 'third-plural', gender: 'masculine', note: 'Ellas if they are all women.' },
+
+  // Ser, "to be" (who or what someone is, and where they're from)
+  { id: 'soy', spanish: 'soy', english: 'I am', img: false, person: 'first-singular' },
+  { id: 'eres', spanish: 'eres', english: 'you are (tú)', img: false, person: 'second-singular' },
+  { id: 'es', spanish: 'es', english: 'is; you are (usted)', img: false, person: 'third-singular' },
+  { id: 'somos', spanish: 'somos', english: 'we are', img: false, person: 'first-plural' },
+  { id: 'son', spanish: 'son', english: 'they are; you (all) are', img: false, person: 'third-plural' },
+
+  // Yes, no, names, asking
+  { id: 'si-tilde', spanish: 'sí', english: 'yes', img: false },
+  { id: 'no', spanish: 'no', english: 'no; not', img: false },
+  { id: 'tambien', spanish: 'también', english: 'too, also', img: false },
+  { id: 'me-llamo', spanish: 'me llamo', english: 'my name is', img: false },
+  { id: 'te-llamas', spanish: 'te llamas', english: 'your name is (tú)', img: false },
+  { id: 'se-llama', spanish: 'se llama', english: 'his, her or your (usted) name is', img: false },
+  { id: 'quien', spanish: 'quién', english: 'who', img: false },
+  { id: 'que-tilde', spanish: 'qué', english: 'what', img: false },
+  { id: 'como-tilde', spanish: 'cómo', english: 'how', img: false },
+  { id: 'donde-tilde', spanish: 'dónde', english: 'where', img: false },
+  { id: 'de', spanish: 'de', english: 'from, of', img: false },
+  { id: 'hablas', spanish: 'hablas', english: 'you speak (tú)', img: false, person: 'second-singular' },
+  { id: 'espanyol', spanish: 'español', english: 'Spanish', img: false },
+  { id: 'ingles', spanish: 'inglés', english: 'English', img: false },
+  { id: 'un-poco', spanish: 'un poco', english: 'a little', img: false },
+
+  // People: jobs and nationalities end in -o for a man and -a for a woman
+  { id: 'estudiante', spanish: 'estudiante', english: 'student', note: 'The same for a man or a woman.' },
+  { id: 'maestro', spanish: 'maestro', english: 'teacher (a man)', img: false, gender: 'masculine' },
+  { id: 'maestra', spanish: 'maestra', english: 'teacher (a woman)', gender: 'feminine' },
+  { id: 'doctora', spanish: 'doctora', english: 'doctor (a woman)', gender: 'feminine' },
+  { id: 'amigo', spanish: 'amigo', english: 'friend (a man)', img: false, gender: 'masculine' },
+  { id: 'amiga', spanish: 'amiga', english: 'friend (a woman)', img: false, gender: 'feminine' },
+  { id: 'mexicano', spanish: 'mexicano', english: 'Mexican (a man)', img: false, gender: 'masculine' },
+  { id: 'mexicana', spanish: 'mexicana', english: 'Mexican (a woman)', img: false, gender: 'feminine' },
+
+  // Places and names
+  { id: 'mexico', spanish: 'México', english: 'Mexico', img: false, note: 'The x sounds like j: Mé-hi-co.' },
+  { id: 'estados-unidos', spanish: 'Estados Unidos', english: 'the United States', img: false },
+  { id: 'canada', spanish: 'Canadá', english: 'Canada', img: false },
+  { id: 'ana', spanish: 'Ana', english: 'Ana', img: false },
+  { id: 'luis', spanish: 'Luis', english: 'Luis', img: false },
 ]);

@@ -92,7 +92,7 @@ export function loadShared(...files) {
 export function loadVocab(home) {
   const vocabPath = unit => join(ROOT, unit, 'vocab.js');
   if (home === 'words' ? !existsSync(DICTIONARY_FILE) : !existsSync(vocabPath(home))) return null;
-  const sandbox = loadShared('shared/units.js');
+  const sandbox = loadShared('shared/spanish.js', 'shared/units.js');
   const run = path => vm.runInContext(readFileSync(path, 'utf8'), sandbox, { filename: path });
   run(DICTIONARY_FILE);
   if (home === 'words') return { voice: sandbox.Words.voice, ...sandbox.WORDS };

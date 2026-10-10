@@ -4,9 +4,9 @@
  * `node tools/draw.mjs` writes them to words/img/<id>.svg; never edit those.
  * Shared parts are in tools/svg.mjs.
  */
-import { svg, OUTLINE, COLOUR, shadow, glass, clockFace, sky } from '../tools/svg.mjs';
+import { svg, OUTLINE, COLOUR, shadow, glass, clockFace, sky, person, pointingArm, ring, speechBubble } from '../tools/svg.mjs';
 
-const { ink, white, cream, red, orange, yellow, green, teal, blue, purple, pink, brown, tan } = COLOUR;
+const { ink, white, cream, red, orange, yellow, green, teal, blue, purple, pink, brown, tan, grey } = COLOUR;
 
 // Unit 1 · Sounds & Spelling
 
@@ -152,9 +152,83 @@ const gracias = () => svg('a present', `${shadow(64, 116, 44)}
   <rect x="58" y="40" width="12" height="72" fill="${yellow}" ${OUTLINE}/>
   <path d="M64 40 C50 18 30 24 40 36 C44 40 56 40 64 40 C72 40 84 40 88 36 C98 24 78 18 64 40 Z" fill="${yellow}" ${OUTLINE}/>`);
 
+// Unit 3 · Me & You · Yo y tú
+// The pronouns share one scene: the speaker (front left, red, speech
+// bubble) talks to the listener (front right) with someone else behind.
+// The speaker points at whoever is meant, drawn in colour inside a gold
+// ring; everyone else is grey. Él and ella differ by hair, tú and usted by
+// age.
+const pronounScene = (() => {
+  // Where each role stands: [x, y, scale]. The plurals add a partner.
+  const PLACES = {
+    speaker: [[26, 80, 1]], listener: [[102, 82, 1]], other: [[74, 36, 0.8]],
+    speakers: [[24, 80, 1], [54, 86, 0.9]], listeners: [[84, 88, 0.9], [110, 82, 0.9]], others: [[62, 36, 0.75], [92, 36, 0.75]],
+  };
+  const SHIRT_OF_ROLE = { speaker: 'red', listener: 'blue', other: 'green' };
+  // The speaker's arm from the right shoulder: at their own chest, across
+  // at the listener(s), or up at the others behind.
+  const POINTING = {
+    speaker: [[[38, 102], [46, 116], [32, 108]], [-1, -0.4]],
+    listener: [[[38, 102], [52, 104], [62, 100]], [1, -0.15]],
+    other: [[[38, 102], [48, 92], [54, 80]], [0.6, -1]],
+  };
+  const ringAround = places => {
+    const xs = places.flatMap(([x, , scale]) => [x - 22 * scale, x + 22 * scale]);
+    const ys = places.flatMap(([, y, scale]) => [y - 23 * scale, y + 46 * scale]);
+    return ring(Math.max(2, Math.min(...xs)), Math.max(2, Math.min(...ys)), Math.min(126, Math.max(...xs)), Math.min(126, Math.max(...ys)));
+  };
+  const floor = `<path d="M4 124 H124" stroke="${COLOUR.tan}" stroke-width="3" stroke-linecap="round"/>`;
+
+  // meant: 'speaker', 'listeners', 'other'...; look: { listener, other }
+  // hair and age, as person() takes them.
+  return (meant, look = {}) => {
+    const meantRole = meant.replace(/s$/, '');
+    const roles = ['other', 'listener', 'speaker'].map(role => role === meantRole ? meant : role);
+    const drawRole = role => PLACES[role].map(([x, y, scale]) => {
+      const role1 = role.replace(/s$/, '');
+      const inColour = role === meant || role === 'speaker';
+      return person(x, y, { shirt: inColour ? SHIRT_OF_ROLE[role1] : null, scale, ...look[role1] });
+    }).join('');
+    const [armPath, finger] = POINTING[meantRole];
+    // The ring goes over the grey people and under the ones it marks; the
+    // speaker is always in colour, their arm on top.
+    return [floor, ...roles.filter(role => role !== meant).map(drawRole), ringAround(PLACES[meant]), drawRole(meant),
+      pointingArm(armPath, 'red', finger), speechBubble(30, 60)].join('');
+  };
+})();
+
+const YOUNG_LISTENER = { listener: { hair: 'short' } }, OLD_LISTENER = { listener: { hair: 'short', old: true } };
+const MAN_BEHIND = { other: { hair: 'short' } }, WOMAN_BEHIND = { other: { hair: 'long' } };
+
+// Jobs: one woman, large, with what her job needs.
+const atWork = (title, shirt, props, propsInFront = '') => svg(title, `${props}${person(64, 50, { shirt, hair: 'long', scale: 1.8, face: true })}${propsInFront}`);
+
+const estudiante = () => atWork('a student with a book and a backpack', 'teal', '',
+  `<path d="M46 96 L44 128 M82 96 L84 128" stroke="${orange}" stroke-width="7" stroke-linecap="round"/>
+   <path d="M40 104 L64 98 L88 104 L88 126 L64 120 L40 126 Z" fill="${white}" ${OUTLINE}/><path d="M64 98 L64 120" stroke="${ink}" stroke-width="2"/>`);
+
+const maestra = () => atWork('a teacher in front of a blackboard', 'purple',
+  `<rect x="4" y="8" width="120" height="70" rx="4" fill="#2e6b4f" ${OUTLINE}/>
+   <path d="M14 26 c4 -8 10 -8 10 0 v8 M14 30 c0 6 10 6 10 0 M30 18 v16 c0 -8 10 -8 10 0 c0 8 -10 8 -10 0" fill="none" stroke="${white}" stroke-width="2.5" stroke-linecap="round"/>
+   <path d="M94 24 h20 M94 34 h14 M14 52 h18" stroke="${white}" stroke-width="2.5" stroke-linecap="round"/>`);
+
+const doctora = () => atWork('a doctor in a white coat with a stethoscope', 'white', '',
+  `<path d="M50 84 C46 100 56 112 64 112 C72 112 82 100 78 84" fill="none" stroke="${ink}" stroke-width="3"/>
+   <circle cx="64" cy="114" r="5" fill="${grey}" ${OUTLINE}/>
+   <rect x="84" y="98" width="16" height="16" rx="2" fill="${white}" ${OUTLINE}/><path d="M92 101 V111 M87 106 H97" stroke="${red}" stroke-width="3"/>`);
+
 export default {
   casa: casa(), mesa: mesa(), libro: libro(), sol: sol(), luna: luna(),
   huevo: huevo(), jugo: jugo(), gato: gato(), guitarra: guitarra(), queso: queso(),
   llave: llave(), pinya: pinya(), perro: perro(), zapato: zapato(), vaso: vaso(), barco: barco(),
   'buenos-dias': buenosDias(), 'buenas-tardes': buenasTardes(), 'buenas-noches': buenasNoches(), adios: adios(), gracias: gracias(),
+  yo: svg('yo: the speaker, pointing at themself', pronounScene('speaker', MAN_BEHIND)),
+  'tu-tilde': svg('tú: a friend being spoken to, pointed at', pronounScene('listener', { ...YOUNG_LISTENER, ...MAN_BEHIND })),
+  usted: svg('usted: an older person being spoken to, pointed at', pronounScene('listener', { ...OLD_LISTENER, ...MAN_BEHIND })),
+  'el-tilde': svg('él: a man behind, pointed at', pronounScene('other', MAN_BEHIND)),
+  ella: svg('ella: a woman behind, pointed at', pronounScene('other', WOMAN_BEHIND)),
+  nosotros: svg('nosotros: the speaker and a friend, ringed together', pronounScene('speakers', MAN_BEHIND)),
+  ustedes: svg('ustedes: the people being spoken to, ringed together', pronounScene('listeners', MAN_BEHIND)),
+  ellos: svg('ellos: two people behind, ringed together', pronounScene('others', MAN_BEHIND)),
+  estudiante: estudiante(), maestra: maestra(), doctora: doctora(),
 };

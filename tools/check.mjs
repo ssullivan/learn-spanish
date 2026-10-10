@@ -8,7 +8,7 @@
  *
  * Checks:
  *   - pages load vocab only between the vocab markers, where --fix writes
- *     shared/units.js, the dictionary, the vocab.js of every unit the
+ *     shared/spanish.js, shared/units.js, the dictionary, the vocab.js of every unit the
  *     page's unit borrows from (site.mjs borrowsFrom) and its own
  *   - every href/src in every .html is relative and points at a file
  *   - local .css/.js links carry ?v=<first 8 of sha1(file)>
@@ -70,7 +70,8 @@ const pages = files.filter(file => file.endsWith('.html'));
 const stamp = file => createHash('sha1').update(readFileSync(file)).digest('hex').slice(0, 8);
 
 // Vocab scripts: written, not typed. A page that loads vocab has them
-// between VOCAB_START and VOCAB_END: shared/units.js, the dictionary, then
+// between VOCAB_START and VOCAB_END: shared/spanish.js and shared/units.js,
+// the dictionary, then
 // the vocab.js of each unit its unit borrows from and its own, as
 // loadVocab loads them in Node.
 const VOCAB_START = '<!-- vocab: written by node tools/check.mjs --fix -->';
@@ -81,7 +82,7 @@ function vocabScripts(page) {
   const pageUnit = relative(ROOT, page).match(/^(unit\d+)\//)?.[1];
   const units = pageUnit ? [...borrowsFrom(pageUnit), pageUnit] : [];
   const script = path => `<script src="${relative(dirname(page), join(ROOT, path))}?v=${stamp(join(ROOT, path))}"></script>`;
-  return [VOCAB_START, script('shared/units.js'), script(DICTIONARY), ...units.map(unit => script(`${unit}/vocab.js`)), VOCAB_END].join('\n');
+  return [VOCAB_START, script('shared/spanish.js'), script('shared/units.js'), script(DICTIONARY), ...units.map(unit => script(`${unit}/vocab.js`)), VOCAB_END].join('\n');
 }
 
 let vocabBlocksWritten = 0;
@@ -89,7 +90,7 @@ for (const page of pages) {
   const source = readFileSync(page, 'utf8');
   const start = source.indexOf(VOCAB_START), end = source.indexOf(VOCAB_END);
   const outside = start < 0 ? source : source.slice(0, start) + source.slice(end + VOCAB_END.length);
-  if (/<script src="[^"]*(vocab|units|words)\.js/.test(outside)) report(page, `load vocab only between ${VOCAB_START} and ${VOCAB_END} (see unit1/learn.html)`);
+  if (/<script src="[^"]*(vocab|units|words|spanish)\.js/.test(outside) && /<script src="[^"]*vocab\.js/.test(source)) report(page, `load vocab only between ${VOCAB_START} and ${VOCAB_END} (see unit1/learn.html)`);
   if (start < 0) continue;
   if (end < start) { report(page, `${VOCAB_START} needs a ${VOCAB_END} after it`); continue; }
   const wanted = vocabScripts(page);
